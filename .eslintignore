@@ -1,0 +1,9 @@
+node_modules
+public
+configs
+!*.jsx?
+!components
+!layouts
+!libs
+!pages
+!styles
