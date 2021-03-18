@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react",
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@layouts/*": [
+        "layouts/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@libs/*": [
+        "libs/*"
+      ],
+      "@api/*": [
+        "pages/api/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@mock/*": [
+        "mock/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "public",
+    ".tmp"
+  ]
+}
