@@ -9,6 +9,7 @@ module.exports = {
     '^@public/(.*)$': '<rootDir>/public/$1',
     '^@mock/(.*)$': '<rootDir>/mock/$1',
     '^@config/(.*)$': '<rootDir>/config/$1',
+    '^@data/(.*)$': '<rootDir>/data/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: [

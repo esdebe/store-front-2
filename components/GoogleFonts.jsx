@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import googleFontConfig from '@styles/google-font.config'
+import googleFontConfig from '@config/google-font.config'
 
 function GoogleFonts() {
   const fonts = googleFontConfig

@@ -1,24 +1,91 @@
-import { createMuiTheme } from '@material-ui/core/styles'
-import { red } from '@material-ui/core/colors'
+import { createMuiTheme, alpha } from '@material-ui/core/styles'
+import colorPreference from '@config/color.config'
 
-// Create a theme instance.
 const theme = createMuiTheme({
   palette: {
+    preference: {
+      ...colorPreference,
+    },
     primary: {
-      main: '#556cd6',
+      main: colorPreference.blue,
     },
     secondary: {
-      main: '#19857b',
+      main: colorPreference.green,
     },
     error: {
-      main: red.A400,
+      main: colorPreference.red,
     },
     background: {
-      default: '#fff',
+      default: colorPreference.white,
     },
   },
   typography: {
     fontFamily: 'Poppins',
+    headerMenu: {
+      fontSize: 14,
+    },
+    filterBarItem: {
+      fontSize: 14,
+      fontStyle: 'normal',
+      fontWeight: 500,
+      lineHeight: 1.5,
+      letterSpacing: '0.03em',
+      textAlign: 'left',
+    },
+    productGridTitle: {
+      fontSize: 16,
+      fontStyle: 'normal',
+      fontWeight: 500,
+      lineHeight: 1.688,
+      letterSpacing: '0em',
+      textAlign: 'left',
+      color: colorPreference.black,
+    },
+    mainSlideTitle: {
+      fontSize: 16,
+      fontStyle: 'normal',
+      fontWeight: 500,
+      lineHeight: 1.688,
+      letterSpacing: '0em',
+      textAlign: 'left',
+      color: colorPreference.black,
+    },
+    mainSlideSubTitle: {
+      fontSize: 16,
+      fontStyle: 'normal',
+      fontWeight: 500,
+      lineHeight: 1.688,
+      letterSpacing: '0em',
+      textAlign: 'left',
+      color: colorPreference.black,
+    },
+    afterContentTitle: {
+      fontSize: 16,
+      fontStyle: 'normal',
+      fontWeight: 600,
+      lineHeight: 1.7,
+      letterSpacing: '0.05em',
+      textAlign: 'center',
+      color: '#b7c1da',
+    },
+    socialMediaTitle: {
+      fontSize: 12,
+      fontStyle: 'normal',
+      fontWeight: 500,
+      lineHeight: 1.25,
+      letterSpacing: '0.03em',
+      textAlign: 'center',
+      textTransform: 'uppercase',
+    },
+    footerCopyRight: {
+      fontSize: 12,
+      fontStyle: 'normal',
+      fontWeight: 400,
+      lineHeight: 1.25,
+      letterSpacing: '0.03em',
+      textAlign: 'center',
+      color: alpha(colorPreference.white, 0.62),
+    },
   },
 })
 

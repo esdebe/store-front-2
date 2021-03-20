@@ -13,7 +13,17 @@ import { Hydrate } from 'react-query/hydration'
 import reduxStore from '@libs/store'
 import NextApp from 'next/app'
 import 'swiper/swiper.min.css'
-import appConfig from '@config/app.config'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import seoConfig from '@config/seo.config'
+import Page from '@components/animation/Page'
+import { DefaultSeo } from 'next-seo'
+
+import products from '@data/products'
+import slides from '@data/slides'
+import featureds from '@data/featureds'
+import categories from '@data/categories'
+import socialMedia from '@data/socialMedia'
+import storeProfile from '@data/storeProfile'
 
 /*
   import makeServer from '../mock/server'
@@ -34,7 +44,7 @@ const queryClient = new QueryClient({
 export const emotionCache = createCache({ key: 'css', prepend: true })
 
 function App(props) {
-  const { Component, pageProps } = props
+  const { Component, pageProps, router } = props
 
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side')
@@ -49,15 +59,18 @@ function App(props) {
         <ReduxProvider store={reduxStore}>
           <EmotionCacheProvider value={emotionCache}>
             <Head>
-              <title>{appConfig.title}</title>
               <meta
                 name="viewport"
                 content="initial-scale=1, width=device-width"
               />
             </Head>
+            <DefaultSeo {...seoConfig} />
             <ThemeProvider theme={theme}>
+              <CssBaseline />
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <Component {...pageProps} />
+                <Page animationKey={router.route} animate={false}>
+                  <Component {...pageProps} />
+                </Page>
               </LocalizationProvider>
             </ThemeProvider>
           </EmotionCacheProvider>
@@ -73,7 +86,14 @@ function App(props) {
 App.getInitialProps = async (appContext) => {
   const appProps = await NextApp.getInitialProps(appContext)
   /* APP PROP START */
-
+  appProps.pageProps = {
+    slides,
+    featureds,
+    categories,
+    products,
+    socialMedia,
+    storeProfile,
+  }
   /* APP PROP END */
   return { ...appProps }
 }

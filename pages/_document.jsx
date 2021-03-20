@@ -4,7 +4,6 @@ import { ServerStyleSheets } from '@material-ui/core/styles'
 import createEmotionServer from '@emotion/server/create-instance'
 import theme from '@libs/common/theme'
 import GoogleFonts from '@components/GoogleFonts'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import { emotionCache } from '@pages/_app'
 
 const { extractCritical } = createEmotionServer(emotionCache)
@@ -21,7 +20,6 @@ function Document() {
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
         <GoogleFonts />
-        <CssBaseline />
       </Head>
       <body>
         <Main />
